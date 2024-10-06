@@ -1,0 +1,17 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: ${USER} # Username for PostgreSql superuser
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # Password for PostgreSql superuser
+      POSTGRES_DB: ${POSTGRES_DB} # Default database to create
+    volumes:
+      - db-data: /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  app:
+    build: .
+    ports: -"3000:3000"
+    depends_on:
+      - db

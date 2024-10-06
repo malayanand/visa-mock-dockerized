@@ -1,0 +1,24 @@
+{
+  "name": "visa-mock",
+  "version": "1.0.0",
+  "description": "Visa mock backend",
+  "main": "index.js",
+  "target": "es6",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "predev": "npm run build",
+    "dev": "npx tsc -w & nodemon dist/index.js"
+  },
+  "author": "Malay Anand",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
